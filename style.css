@@ -8,7 +8,7 @@
 /* ===== LAYOUT CONSTANTS ===== */
 :root {
     --sidebar-width: 15%;
-    --header-height: 70px;
+    --header-height: 90px; /* 50px red bar + 40px blue bar */
     --footer-size: 180px;
     --article-width: 300px;
     --bg: #f4f7fb;
@@ -49,49 +49,47 @@ body {
     text-decoration: underline;
 }
 
-/* ===== FIXED HEADER ===== */
+/* ===== FIXED HEADER (TWO-BAR STYLE) ===== */
 header {
     position: fixed;
     top: 0;
     left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
-    height: var(--header-height);
-    background-color: white;
-    border-bottom: 2px solid #b8c7e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 25px;
     z-index: 1000;
 }
 
-header p {
-    font-size: 32px;
-    font-weight: bold;
-    color: var(--accent);
+/* Top red bar */
+#topBar {
+    background-color: #d9534f;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#topBar h1 {
+    color: black;
+    font-size: 28px;
     margin: 0;
 }
 
-
-header nav {
-    position: absolute;
-    right: 25px;
+/* Bottom blue bar */
+#topNav {
+    background-color: #0275d8;
+    height: 40px;
     display: flex;
-    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
 }
 
-
-header nav button {
-    margin-left: 15px;
-    padding: 8px 12px;
-    border: none;
-    background-color: #e6ecfa;
-    cursor: pointer;
-    border-radius: 4px;
+#topNav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-header nav button:hover {
-    background-color: #cdd9f5;
+#topNav a:hover {
+    text-decoration: underline;
 }
 
 /* ===== MAIN CONTENT AREA ===== */
@@ -151,4 +149,5 @@ main {
     border: 2px solid #8faee6;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+
 
