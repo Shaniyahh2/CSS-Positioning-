@@ -1,0 +1,140 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== LAYOUT CONSTANTS ===== */
+:root {
+    --sidebar-width: 15%;      /* You can adjust this */
+    --header-height: 70px;
+    --footer-size: 180px;
+    --article-width: 300px;    /* Required for responsive reflow */
+    --bg: #f4f7fb;
+    --accent: #2a4f9c;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg);
+}
+
+/* ===== LEFT JUMP MENU ===== */
+#jumpMenu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    background-color: #dce4f7;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 2px solid #b8c7e0;
+}
+
+#jumpMenu h3 {
+    margin-bottom: 10px;
+}
+
+#jumpMenu a {
+    display: block;
+    margin: 6px 0;
+    color: #003a8c;
+    text-decoration: none;
+}
+
+#jumpMenu a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FIXED HEADER ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width); /* prevents centering behind sidebar */
+    width: calc(100% - var(--sidebar-width));
+    height: var(--header-height);
+    background-color: white;
+    border-bottom: 2px solid #b8c7e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 32px;
+    color: var(--accent);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+#mainContent {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    padding: 20px;
+}
+
+/* Responsive grid for articles */
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Each article box */
+.article {
+    width: var(--article-width);
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #cfd8ea;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.article h2 {
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.article p {
+    line-height: 1.4;
+}
+
+.article a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0056cc;
+    text-decoration: none;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FIXED BOTTOM-RIGHT FOOTER ===== */
+#thankYou {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: var(--footer-size);
+    background-color: #cfe0ff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #8faee6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
