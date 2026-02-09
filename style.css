@@ -69,7 +69,17 @@ header p {
     font-size: 32px;
     font-weight: bold;
     color: var(--accent);
+    margin: 0;
 }
+
+
+header nav {
+    position: absolute;
+    right: 25px;
+    display: flex;
+    gap: 15px;
+}
+
 
 header nav button {
     margin-left: 15px;
@@ -128,7 +138,7 @@ main {
     text-decoration: underline;
 }
 
-/* ===== FIXED THANK YOU BOX ===== */
+/* ===== THANK YOU BOX ===== */
 #thanks {
     position: fixed;
     bottom: 20px;
