@@ -7,10 +7,10 @@
 
 /* ===== LAYOUT CONSTANTS ===== */
 :root {
-    --sidebar-width: 15%;      /* You can adjust this */
+    --sidebar-width: 15%;
     --header-height: 70px;
     --footer-size: 180px;
-    --article-width: 300px;    /* Required for responsive reflow */
+    --article-width: 300px;
     --bg: #f4f7fb;
     --accent: #2a4f9c;
 }
@@ -34,7 +34,7 @@ body {
     border-right: 2px solid #b8c7e0;
 }
 
-#jumpMenu h3 {
+#jumpMenu h2 {
     margin-bottom: 10px;
 }
 
@@ -53,7 +53,7 @@ body {
 header {
     position: fixed;
     top: 0;
-    left: var(--sidebar-width); /* prevents centering behind sidebar */
+    left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
     height: var(--header-height);
     background-color: white;
@@ -65,38 +65,41 @@ header {
     z-index: 1000;
 }
 
-header h1 {
+header p {
     font-size: 32px;
-    color: var(--accent);
-}
-
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
     font-weight: bold;
+    color: var(--accent);
 }
 
-nav a:hover {
-    color: var(--accent);
+header nav button {
+    margin-left: 15px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #e6ecfa;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+header nav button:hover {
+    background-color: #cdd9f5;
 }
 
 /* ===== MAIN CONTENT AREA ===== */
-#mainContent {
+main {
     margin-left: var(--sidebar-width);
     margin-top: var(--header-height);
     padding: 20px;
 }
 
-/* Responsive grid for articles */
-.articles {
+/* ===== ARTICLE GRID ===== */
+#container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Each article box */
-.article {
+/* ===== ARTICLE BOXES ===== */
+#container article {
     width: var(--article-width);
     background-color: white;
     padding: 15px;
@@ -105,28 +108,28 @@ nav a:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
-.article h2 {
+#container article h2 {
     margin-bottom: 10px;
     color: var(--accent);
 }
 
-.article p {
+#container article p {
     line-height: 1.4;
 }
 
-.article a {
+#container article a {
     display: inline-block;
     margin-top: 10px;
     color: #0056cc;
     text-decoration: none;
 }
 
-.article a:hover {
+#container article a:hover {
     text-decoration: underline;
 }
 
-/* ===== FIXED BOTTOM-RIGHT FOOTER ===== */
-#thankYou {
+/* ===== FIXED THANK YOU BOX ===== */
+#thanks {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -138,3 +141,4 @@ nav a:hover {
     border: 2px solid #8faee6;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+
